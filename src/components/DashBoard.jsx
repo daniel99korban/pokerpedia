@@ -4,7 +4,7 @@ export default function DashBoard(){
 
     return(
         <div className="container">
-            {/* <TipoPokemons/> */}
+            <TipoPokemons/>
         </div>
     )
 
