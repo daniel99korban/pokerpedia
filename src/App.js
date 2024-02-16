@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import TipoPokemons from './components/TipoPokemos'
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+        <TipoPokemons/>
+      </div>
     </div>
   );
 }
