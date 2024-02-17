@@ -24,11 +24,11 @@ function TipoPokemons(){
                     <>
                         {
                             categoria.name==tipoPokemon?
-                            <button class="btn btn-primary" data-bs-toggle="collapse" href={`#collapse-${index}`} role="button" aria-expanded="false" aria-controls={`collapse-${index}`}>
+                            <button className="btn btn-primary" data-bs-toggle="collapse" href={`#collapse-${index}`} role="button" aria-expanded="false" aria-controls={`collapse-${index}`}>
                                 {categoria.name}
                             </button>
                             :
-                            <button onClick={()=>{setTipoSelecionado(categoria.name)}} class="btn btn-secondary" data-bs-toggle="collapse" href={`#collapse-${index}`} role="button" aria-expanded="false" aria-controls={`collapse-${index}`}>
+                            <button onClick={()=>{setTipoSelecionado(categoria.name)}} className="btn btn-secondary" data-bs-toggle="collapse" href={`#collapse-${index}`} role="button" aria-expanded="false" aria-controls={`collapse-${index}`}>
                                 {categoria.name}
                             </button>
                         }
@@ -41,8 +41,8 @@ function TipoPokemons(){
             let listaPokemons =  responseJSON.results.map(tipoPokemon => {
                 index += 1;
                 return(
-                    <div class="collapse" id={`collapse-${index}`}>
-                        <div class="card card-body">
+                    <div className="collapse" id={`collapse-${index}`}>
+                        <div className="card card-body">
                             <ListaPokemons url={tipoPokemon.url} name={tipoPokemon.name}/>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ function TipoPokemons(){
 
     return (
         <>
-            <p class="d-inline-flex gap-1">
+            <p className="d-inline-flex gap-1">
                 {categorias}
             </p>
             {pokemons}
