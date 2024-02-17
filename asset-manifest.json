@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pokerpedia/static/css/main.f855e6bc.css",
-    "main.js": "/pokerpedia/static/js/main.f9814df5.js",
+    "main.js": "/pokerpedia/static/js/main.0cab6e1f.js",
     "static/js/453.558dc68a.chunk.js": "/pokerpedia/static/js/453.558dc68a.chunk.js",
     "index.html": "/pokerpedia/index.html",
     "main.f855e6bc.css.map": "/pokerpedia/static/css/main.f855e6bc.css.map",
-    "main.f9814df5.js.map": "/pokerpedia/static/js/main.f9814df5.js.map",
+    "main.0cab6e1f.js.map": "/pokerpedia/static/js/main.0cab6e1f.js.map",
     "453.558dc68a.chunk.js.map": "/pokerpedia/static/js/453.558dc68a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.f9814df5.js"
+    "static/js/main.0cab6e1f.js"
   ]
 }
