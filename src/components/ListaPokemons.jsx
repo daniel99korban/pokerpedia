@@ -1,44 +1,40 @@
 import { useEffect, useState } from "react";
 
 export default function ListaPokemons({name, url}){
-    let [pokeDados, setPokeDados] = useState();
+    let [pokeDados, setPokeDados] = useState([]);
        
     useEffect(()=>{
-        
-        let obterPokemons = async () => {
+        const obterPokemons = async () => {
             let pokemonsResponse = await fetch(url);
             let pokemonsResponseJSON = await pokemonsResponse.json();
             
             
-            const pokemons = await Promise.all( 
-                pokemonsResponseJSON.pokemon.map( async (dados) => {
-                    let img = obterImgPokemon(dados.pokemon.url);
+            const pokemons = await Promise.all(
+                pokemonsResponseJSON.pokemon.map(async (dados) => {
+                    const img = await obterImgPokemon(dados.pokemon.url);
                     return {
-                        name : dados.pokemon.name,
-                        img : img
-                    }
+                        nome: dados.pokemon.name,
+                        img: img,
+                    };
                 })
-            )
+            );
 
             setPokeDados(pokemons);
-        }
-
+        };
         obterPokemons();
+    }, [url])
 
-    },[url])
-
-    let obterImgPokemon = async (url) => {
-        let imgResponse = await fetch(url);
+    const obterImgPokemon = async (_url) => {
+        let imgResponse = await fetch(_url);
         let imgResponseJson = await imgResponse.json();
-        return imgResponseJson.sprites.back_default;
-    }
+        return imgResponseJson.sprites.front_default;
+    };
 
     return(
         <>
             <p>Pokemons tipo <strong>{name}</strong></p>
-
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                {pokeDados.map((pokemon, index)=>(
+                {pokeDados.map((pokemon, index) => (
                     <div key={index} className="col">
                         <div className="card h-100">
                             <img src={pokemon.img} className="card-img-top" alt="..."/>
