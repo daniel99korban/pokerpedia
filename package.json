@@ -1,7 +1,7 @@
 {
   "name": "pokerpedia",
   "version": "0.1.0",
-  "homepage": "https://daniel99korban.github.io/pokerpedia",
+  "homepage": "https://DanielKorban.github.io/pokerpedia",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
