@@ -13,7 +13,7 @@ export default function ListaPokemons({name, url}){
                 pokemonsResponseJSON.pokemon.map(async (dados) => {
                     const img = await obterImgPokemon(dados.pokemon.url);
                     return {
-                        nome: dados.pokemon.name,
+                        name: dados.pokemon.name,
                         img: img,
                     };
                 })
@@ -27,7 +27,7 @@ export default function ListaPokemons({name, url}){
     const obterImgPokemon = async (_url) => {
         let imgResponse = await fetch(_url);
         let imgResponseJson = await imgResponse.json();
-        return imgResponseJson.sprites.front_default;
+        return imgResponseJson.sprites.other.dream_world.front_default;
     };
 
     return(
